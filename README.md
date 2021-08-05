@@ -1,9 +1,9 @@
 # Milestone02_K01
 Tugas Milestone 2 Kelompok 1 SPARTA HMIF 2020
 
-##Judul Solusi: EmergenShift
+## Judul Solusi: EmergenShift
 
-##Kelompok 01: MGKL
+## Kelompok 01: MGKL
 Vieri Mansyl 				- 16520056
 Putri Nurhaliza 				- 16520063
 Owen Christian Wijaya 			- 16520221
