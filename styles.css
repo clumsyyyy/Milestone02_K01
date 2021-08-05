@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+@media screen and (max-width: 1000px){
+    main{
+        margin-top: 150% !important;
+    }
+
+    .banner{
+        border-radius: 0px !important;
+        background-repeat: no-repeat !important;
+        background-size: 200% 100%!important;
+        
+    }
+    .banner ul{
+        margin-right: 100px !important;
+    }
+    .banner ul li{
+        font-size: 12px !important;
+        margin-right: 0px !important;
+        
+    }
+
+    .normal-banner ul li{
+        font-size: 12px !important;
+        margin-right: 5px !important;
+    }
+
+    .banner h1{
+        font-size: 50px !important;
+        margin-top: 100% !important;
+    }
+
+    .banner p{
+        font-size: 12px !important;
+    }
+    main{
+        margin-left: -15px !important;
+    }
+
+    .location{
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+
+    .send-address{
+        width: 30% !important;
+        font-size: 15px !important;
+    }
+    #desc{
+        margin-left: 0px !important;
+    }
+
+    #arrowdown{
+        margin-top: 30px !important;
+        height: 30px !important;
+        width: 30px !important;
+        float: center !important;
+        margin-left: 40% !important;
+    }
+    .option-card{
+        margin-left: 20% !important;
+        margin-bottom: 20px !important;
+    }
+    .option-card p{
+        font-size: 12px !important;
+    }
+
+    #menu p{
+        font-size: 20px;
+        margin: 0 auto !important;
+    }
+    #menu{
+        margin-left: 20px !important;
+    }
+
+    hr{
+        margin-left: 20px !important
+    }
+
+    #input-alamat{
+        margin-left: 30px !important;
+    }
+    .credentials-form, .normal-main{
+        margin-top: 10% !important;
+        margin-left: 5px !important;
+    }
+
+    .credentials-form h2{
+        font-size: 30px !important;
+    }
+    .credentials-form input{
+        width: 90% !important;
+    }
+    .normal-list{
+        position: absolute;
+        margin-top: 70px !important;
+        z-index: 1 !important;
+        background-color: white;
+        width: 100%;
+        margin-left: 0px !important;
+        height: 30px;
+        padding: 20px;
+        padding-left: 30px !important    
+    
+    }
+
+    .normal-list li{
+        margin-left: 10px !important;
+    }
+
+    .normal-list li a{
+        font-size: 15px !important;
+    }
+    .title{
+        height: 70px !important;
+        background-color: white!important;
+        width: 100% !important;
+    }
+    .title h1{
+        margin-left: 60px !important;
+    }
+
+    .cases h3{
+        font-size: 30px !important;
+        margin-top: 40px;
+    }
+
+    .cases p{
+        font-size: 20px !important;
+    }
+
+    .what-to-do-box{
+        margin-left: 40px !important;
+        max-width: 10px !important;
+        padding: 50px !important;
+    }
+
+    .what-to-do-box p{
+        font-size: 15px !important;
+        margin-left: 5px !important;
+        
+    }
+    .cases h3, p{
+        margin-left: -20px !important; 
+    }
+
+    #calling, #address-p{
+        font-size: 15px !important;
+        margin: 20px !important;
+    }
+
+}
+
+html, body {
+    min-width: 98% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.banner{
+    font-family: "Lexend";
+    color: white;
+    min-height: 90%;
+    position: absolute;
+    min-width: 98% !important;
+    font-size: 50px;
+    padding-left: 30px;
+    margin: -10px;
+    margin-top: -20px;
+    background-image: linear-gradient(90deg, rgba(185,29,29,1) 0%, rgba(91,0,0,0.7572071064754027) 45%, rgba(0,21,57,0.3706524846266631) 91%), 
+    url('assets/header-background.jpg');
+    background-size: 100%;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0px 5px 5px 0px rgba(124, 124,124);
+}
+
+.robbery{
+    background-image: linear-gradient(90deg, rgba(185,29,29,1) 0%, rgba(91,0,0,0.7572071064754027) 45%, rgba(0,21,57,0.3706524846266631) 91%), 
+    url('assets/perampokan-background.jpg');
+    border-radius: 30px;
+    margin-top: 2% !important;
+    max-height: 10% !important;
+}
+
+.fire{
+    background-image: linear-gradient(90deg, rgba(185,29,29,1) 0%, rgba(91,0,0,0.7572071064754027) 45%, rgba(0,21,57,0.3706524846266631) 91%), 
+    url('assets/kebakaran-background.jpg');
+    border-radius: 30px;
+    margin-top: 2% !important;
+    max-height: 10% !important;
+}
+.normal-banner{
+    font-family: "Lexend";
+    display: inline;
+    margin-left: 50px;
+    
+}
+.normal-banner h1{
+    display: inline;
+    color: rgba(185,29,29,1);
+    font-size: 40px;
+}
+
+
+.banner a{
+    color: white;
+}
+
+header h1{
+    margin-top: 20%;
+    margin-bottom: -0.5%;
+}
+
+
+header ul li{
+    display: inline;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+header p{
+    font-size: 20px;
+}
+main{
+    position: absolute;
+    font-family: "Poppins";
+    font-size: 30px;
+    margin-left: 50px;
+    margin-right: 100px;
+    margin-top: 40%;
+    padding: 20px;
+    min-width: 90%;
+    text-align: center;
+}
+
+.option-card{
+    border: 2px solid rgba(124, 124,124);
+    font-size: 20px;
+    width: 50%;
+    margin: 20px 25%;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(124, 124,124);
+    min-height: 40px;
+    padding: 20px;
+}
+
+.option-card:hover{
+    background-color: rgba(135, 135,135);
+    color: white;
+}
+
+.option-card:active{
+    background-color: rgba(124, 124, 124);
+}
+
+
+.option-icon{
+    height: 40px;
+    width: 40px;
+}
+
+input{
+    border-radius: 10px;
+    height: 30px;
+    width: 50%;
+    padding: 10px;
+    border: 3px rgb(204, 204, 204) solid;
+    background-color: rgb(204,204,204);
+    margin-bottom: 20px;
+    font-family: Poppins;
+    font-size: 18px;
+}
+
+.button{
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    background-color: rgba(185,29,29,1);
+    border: 3px rgba(185,29,29,1) solid;
+    color: white;
+    font-weight: bold;
+    font-family: "Lexend"
+}
+
+footer{
+    background-color: rgba(185,29,29,1);
+    color: white;
+    font-size: 15px;
+    min-height: 40px;
+    margin: -20px;
+    margin-top: 50px;
+    min-width: 95%;
+    padding: 30px;
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
+}
+
+.normal-list{
+    margin-top: 30px;
+}
+
+.title h1{
+    margin-left: 30px;
+}
+
+.hidden{
+    display: none;
+}
+
+.cases h3{
+    font-size: 60px;
+}
+
+.cases p{
+    font-size: 30px;
+}
+
+.send-address:hover, .location:hover{
+    background-color: white !important;
+    color: #002159;
+
+}
+
+.update:hover{
+    background-color: white !important;
+    color: rgba(185,29,29,1);
+
+}
+
+.what-to-do-box{
+    color: black;
+    background-color: white;
+    min-width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 0px;
+    margin-right: 10px;
+    box-shadow: 0px 5px 5px 0px rgba(124, 124,124);
+}
+
+.footerr{
+    background-color: red;
+    position: absolute;
+}
+
+.medic{
+    background-image: linear-gradient(90deg, rgba(185,29,29,1) 0%, rgba(91,0,0,0.7572071064754027) 45%, rgba(0,21,57,0.3706524846266631) 91%), 
+    url('assets/medic-background.jpg');
+    border-radius: 30px;
+    margin-top: 2% !important;
+    max-height: 10% !important;
+}
+
+#calling, #address-p{
+    font-size: 20px !important;
+    margin: 20px !important;
+}
+
+.violence{
+    background-image: linear-gradient(90deg, rgba(185,29,29,1) 0%, rgba(91,0,0,0.7572071064754027) 45%, rgba(0,21,57,0.3706524846266631) 91%), 
+    url('assets/kekerasan-background.jpg');
+    border-radius: 30px;
+    margin-top: 2% !important;
+    max-height: 10% !important;
+}
+
+.final{
+    background-image: linear-gradient(180deg, rgba(29,140,185,1) 0%, rgba(0,91,87,0.7572071064754027) 45%, rgba(65,6,16,0) 100%), 
+    url('assets/toa-heftiba-_UIVmIBB3JU-unsplash.jpg');
+    border-radius: 30px;
+    margin-top: 2% !important;
+    max-height: 10% !important;
+}
+
+.about h4{
+    font-size: 30px !important;
+}
+
+.about p{
+    font-size: 20px !important;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<html>
+    <head>
+        <title>EmergenShift</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+
+
+    <body>
+        <header class = "banner">
+            <ul style = "float: right; margin-right: 100px;">
+                <li><a href = "">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
+
+            <h1>EmergenShift</h1>
+            <p id = "desc">Semua informasi darurat dan penanganan darurat dalam satu laman.</p>
+            <img style = "margin: 0 50%; height: 50px; width: 50px" src = "assets/icons8-shift-down-96.png" id = "arrowdown">
+        </header>
+
+        <main>
+
+            <div id = "input-alamat" style = "background-color: white; border-radius: 20px; padding: 10px">
+                <p style = "font-size: 20px; margin-bottom: -20px;">Masukkan alamat Anda sekarang!</p>
+                <input style = "display: inline" id = "name" type = "text" name = "name" placeholder = "Masukkan alamat....">
+                <input class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
+                <p style = "font-size: 20px; margin-bottom: -20px;">atau</p>
+                <input class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
+            </div>
+            <hr>
+            <div id = "menu">
+                <p>Tenang! Bantuan akan segera datang.<br>Apa yang terjadi?</p>
+                <div class = "option-card" onclick="location.href='perampokan.html';">&nbsp;
+                    <img src = "assets/icons8-robbery-100.png" class = "option-icon">
+                    <p>Tindakan perampokan atau penculikan</p>
+                </div>
+
+                <div class = "option-card" onclick="location.href='medis.html';">&nbsp;
+                    <img src = "assets/ambulance.png" class = "option-icon">
+                    <p>Kejadian medis kritis / pengidap COVID-19</p>
+                </div>
+                <div class = "option-card" onclick="location.href='kebakaran.html';">&nbsp;
+                    <img src = "assets/icons8-fire-hydrant-100.png" class = "option-icon">
+                    <p>Kebakaran</p>
+                </div>
+
+                <div class = "option-card" onclick="location.href='kekerasan.html';">&nbsp;
+                    <img src = "assets/icons8-murder-100.png" class = "option-icon">
+                    <p>Tindakan kekerasan / pembunuhan / tawuran</p>
+                </div>
+            </div>
+
+        </main>
+
+        
+    </body>
+    
+</html>

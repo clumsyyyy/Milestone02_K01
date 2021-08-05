@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<html>
+    <head>
+        <title>EmergenShift</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+
+
+    <body>
+        <header class = "normal-banner">
+            <ul class = "normal-list" style = "float: right; margin-right: 100px;">
+                <li><a href = "main.html">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class = "title">
+                <h1>EmergenShift</h1>
+            </div>
+        </header>
+
+        <main class = "banner medic cases" style = "margin-top: 0%">
+            <h3>Menghubungi rumah sakit terdekat....</h3>
+            <p id = "location" class = "hidden">Lokasi terdeteksi: Jambi</p>
+            <p id = "calling" class = "hidden">Menghubungi RS Abdul Manap.</p>
+            <p id = "address-p" class = "hidden">Jl. Sk. Rd. Syahbudin, Mayang Mangurai, Alam Barajo, Kota Jambi, Jambi 36129</p>
+            <div id = "what-to-do" class = "hidden what-to-do-box" style = "margin-top: 50px !important;">
+                <p style = "font-size: 25px;">Yang bisa dilakukan dalam kondisi sekarang:</p>
+                <p style = "font-size: 20px;">1. Apabila terjadi pendarahan, kompres dengan kain dingin. Letakkan korban <br>
+                di tempat landai.</p>
+                <p style = "font-size: 20px;">2. Dalam kasus COVID-19, tetap lakukan protokol kesehatan dan <i>social distancing</i>.</p>
+                <p style = "font-size: 20px;">3. Apabila korban mulai kehabisan napas, lakukan CPR atau pemberian oksigen melalui <br>
+                    metode lainnya.</p>
+                <p style = "font-size: 20px;">4. Tunggu hingga bantuan datang.</p> 
+            </div>
+        </main>
+    </body>
+
+    <script>
+        setTimeout(function(){
+            document.getElementById("location").classList.remove('hidden');
+            }, 2000);
+        setTimeout(function(){
+            document.getElementById("calling").classList.remove('hidden');
+            }, 4000);
+
+        setTimeout(function(){
+            document.getElementById("what-to-do").classList.remove('hidden');
+            }, 5000);
+            setTimeout(function(){
+            document.getElementById("what-to-do").classList.remove('hidden');
+            }, 5000);
+        setTimeout(function(){
+            open("final.html")
+            }, 10000);
+    </script>
+</html>
