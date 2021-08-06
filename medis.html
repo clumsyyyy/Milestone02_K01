@@ -36,7 +36,23 @@
         </main>
     </body>
 
+	<script src=
+    "https://smtpjs.com/v3/smtp.js">
+	</script>
+	
     <script>
+		window.onload = function sendEmail() {
+			Email.send({
+			Host: "smtp.gmail.com",
+			Username: "nyobanyoba54321@gmail.com",
+			Password: "nyoba12345",
+			To: 'williammk567@gmail.com',
+			From: "nyobanyoba54321@gmail.com",
+			Subject: "PANGGILAN DARURAT",
+			Body:"<p>NAMA : ... <br> ALAMAT : ... <br> JENIS : Medis </p>",
+			})
+		};
+	
         setTimeout(function(){
             document.getElementById("location").classList.remove('hidden');
             }, 2000);
