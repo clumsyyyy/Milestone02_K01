@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script src = "jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <html>
     <head>
@@ -27,7 +28,7 @@
                 <input style = "display: inline" id = "name" type = "text" name = "name" placeholder = "Masukkan alamat....">
                 <input class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
                 <p style = "font-size: 20px; margin-bottom: -20px;">atau</p>
-                <input class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
+                <input id = "location-button" class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
             </div>
             <hr>
             <div id = "menu">
@@ -56,5 +57,28 @@
 
         
     </body>
-    
+    <script>
+          $('#location-button').click(function(){
+        
+            navigator.geolocation.getCurrentPosition(
+            function( position ){ // success cb
+                console.log( position );
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                
+                const Http = new XMLHttpRequest();
+                const url = 'http://api.positionstack.com/v1/reverse?access_key=184fa96c2f976f0270df6acd56b0d6e6&query=' + lat + ',' + lng
+                Http.open("GET", url);
+                Http.send();
+                Http.onreadystatechange = (e) =>{
+                address  = JSON.parse(Http.responseText)
+                console.log(address.data[0].label)
+        }
+                
+            },
+            function(){ // fail cb
+            }
+        );
+          });
+    </script>
 </html>
