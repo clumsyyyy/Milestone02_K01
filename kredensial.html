@@ -23,22 +23,41 @@
             <h2>
                 Perbarui kredensial Anda
             </h2>
-            <p style = "font-size: 20px">Nama Lengkap</p>
-            <input id = "name" type = "text" name = "name" placeholder = "Masukkan nama lengkap....">
-    
-            <p style = "font-size: 20px">Nomor Telpon</p>
-            <input id = "name" type = "text" name = "name" placeholder = "Masukkan nomor telpon....">
-    
-            <p style = "font-size: 20px">Nomor KTP</p>
-            <input id = "name" type = "text" name = "name" placeholder = "Masukkan nomor KTP....">
-    
-            <p style = "font-size: 20px">Alamat Rumah</p>
-            <input id = "name" type = "text" name = "name" placeholder = "Masukkan alamat rumah....">
-    
-            <input class = "button update" type = "submit" value = "Perbarui">
+            <div id = "user-form">
+                <form id = "form-data-user" onsubmit = 'return false'>
+                    <div class = "form-element">
+                        <label for = "nama">Nama user:</label><br>
+                        <input id = "nama" type = "text" name = "nama" placeholder = "Masukkan nama user...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "telp">Nomor telpon:</label><br>
+                        <input id = "telp" type = "text" name = "telp" placeholder = "Masukkan nomor telpon...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "nik">Nomor KTP/NIK:</label><br>
+                        <input id = "ktp" type = "text" name = "ktp" placeholder = "Masukkan nomor KTP/NIK...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "almt">Alamat:</label><br>
+                        <input id = "almt" type = "text" name = "almt" placeholder = "Masukkan alamat...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "email">E-mail:</label><br>
+                        <input id = "email" type = "text" name = "email" placeholder = "Masukkan email...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <input id = "submitButton" class = "button update" type = "submit" value = "Submit Data">
+                    </div>
+                </form>
+            </div>
         </main>
     </body>
-
+    <script src = "script_kredential.js"></script>
 
     
 </html>
