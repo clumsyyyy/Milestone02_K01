@@ -15,7 +15,7 @@ function putUserList(data){
         }
 
         userData.unshift(data);
-        if(userData.length > 5){
+        if(userData.length > 1){
             userData.pop();
         }
 
@@ -43,11 +43,7 @@ submitAction.addEventListener("submit", function(event){
 
 window.addEventListener("load", function(){
     if (checkForStorage()) {
-        if (localStorage.getItem(storageKey) !== null){
-                const userData = getUserList();
-                renderUserList(userData);
-            }
-    }else{
-        alert("Browser yang Anda gunakan tidak mendukung Web Storage")
-    }
-});
+        if (localStorage.getItem(storageKey) === null){
+            alert("Browser yang Anda gunakan tidak mendukung Web Storage")
+        }
+}});

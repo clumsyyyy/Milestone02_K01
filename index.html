@@ -25,8 +25,8 @@
 
             <div id = "input-alamat">
                 <p style = "font-size: 20px; margin-bottom: -20px;">Masukkan alamat Anda sekarang!</p>
-                <input style = "display: inline" id = "name" type = "text" name = "name" placeholder = "Masukkan alamat....">
-                <input class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
+                <input style = "display: inline" id = "custom-address" type = "text" name = "custom-address" placeholder = "Masukkan alamat....">
+                <input id = "address-button" class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
                 <p style = "font-size: 20px; margin-bottom: -20px;">atau</p>
                 <input id = "location-button" class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
             </div>
@@ -58,7 +58,7 @@
         
     </body>
     <script>
-          $('#location-button').click(function(){
+        $('#location-button').click(function(){
         
             navigator.geolocation.getCurrentPosition(
             function( position ){ // success cb
@@ -71,14 +71,18 @@
                 Http.open("GET", url);
                 Http.send();
                 Http.onreadystatechange = (e) =>{
-                address  = JSON.parse(Http.responseText)
-                console.log(address.data[0].label)
-        }
-                
-            },
-            function(){ // fail cb
+                    address  = JSON.parse(Http.responseText)
+                    console.log(address.data[0].label)
+                    const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+                    localStorage.setItem(storageKey, address.data[0].label)
+                }
             }
-        );
-          });
+            )});
+        $("#address-button").click(function(){
+            const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+            localStorage.setItem(storageKey, document.getElementById("custom-address").value)
+        })
+        
+        
     </script>
 </html>
