@@ -28,22 +28,17 @@ submitAction.addEventListener("submit", function(event){
     const inputTelp = document.getElementById("telp").value;
     const inputKTP = document.getElementById("ktp").value;
     const inputAlmt = document.getElementById("almt").value;
+    const inputProv = document.getElementById("prov").value;
     const inputEmail = document.getElementById("email").value;
-
+    
     const newUserData = {
         nama: inputNama,
         telp: inputTelp,
         ktp: inputKTP,
         almt: inputAlmt,
+        prov: inputProv,
         email: inputEmail
     }
 
     putUserList(newUserData);
 })
-
-window.addEventListener("load", function(){
-    if (checkForStorage()) {
-        if (localStorage.getItem(storageKey) === null){
-            alert("Browser yang Anda gunakan tidak mendukung Web Storage")
-        }
-}});
