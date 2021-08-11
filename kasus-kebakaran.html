@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<script src = 
+    "https://smtpjs.com/v3/smtp.js">
+</script>
+<script src = "data/dataDamkar.js" type = "text/javascript"></script>
+
+
+<html>
+    <head>
+        <title>EmergenShift</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+
+
+    <body>
+        <header class = "normal-banner">
+            <ul class = "normal-list" style = "float: right; margin-right: 100px;">
+                <li><a href = "main.html">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class = "title">
+                <h1>EmergenShift</h1>
+            </div>
+        </header>
+
+        <main class = "banner fire cases" style = "margin-top: 0%">
+            <h3>Menghubungi pemadam kebakaran....</h3>
+            <div id = "infobox"></div>
+            <div id = "what-to-do" class = "hidden what-to-do-box" style = "margin-top: 50px !important;">
+                <p style = "font-size: 20px;">1. Apabila memungkinkan, gunakan <i>fire extinguisher</i> untuk keluar dari api. Jangan membuka pintu yang mulai hangat karena bisa jadi pertanda adanya api di balik pintu.</p>
+                <p style = "font-size: 20px;">2. Gunakan tangga untuk turun. Apabila terjebak dalam asap, tahan nafas lalu bergerak secara menunduk di bawah asap.</p>
+                <p style = "font-size: 20px;">3. Prioritaskan mengeluarkan mereka yang terjebak di dalam bangunan. Ketika berada di luar, hubungi nomor darurat dan menjauh dari kebakaran.</p>
+                <p style = "font-size: 20px;">4. Tunggu hingga bantuan datang.</p> 
+            </div>
+
+        </main>
+    </body>
+    <script>
+            setTimeout(function(){
+            document.getElementById("what-to-do").classList.remove('hidden');
+            }, 2000);
+            setTimeout(function(){
+            open("final.html")
+            }, 10000);
+    </script>
+
+    <script>        
+        function getFirefighter(){        
+            const data = JSON.parse(localStorage.getItem("EMERGENSHIFT"))[0];
+            let provinsi = " "
+            provinsi = data.prov.toUpperCase()
+            console.log(provinsi)
+            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
+                const tempAddress = localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS");
+                provinsi = JSON.parse(tempAddress).region.toUpperCase();
+                console.log(provinsi)
+            } 
+            console.log(provinsi)
+            var i = 0
+            var polisi = ""
+            var isFound = false
+            var alamatDamkar = ""
+            var noTelp = ""
+            var website = ""
+
+            while (i < dataDamkar.length){
+                if (provinsi === dataDamkar[i]["Provinsi"].toUpperCase() || provinsi === dataDamkar[i]["Province"].toUpperCase()){
+                    polisi = dataDamkar[i]["Nama"]
+                    alamatDamkar = dataDamkar[i]["Alamat"]
+                    noTelp = dataDamkar[i]["Nomor Telepon"]
+                    isFound = true
+                }
+                i = i + 1;
+            }
+
+            const infobox = document.getElementById("infobox");
+            infobox.innerHTML += "<p>Lokasi: <span id = 'provi'> " + provinsi + "</span></p>"
+            infobox.innerHTML += "<p><span id = 'nama'>" + polisi + "</span><p>"
+            infobox.innerHTML += "<p><span id = 'alamat'>" + alamatDamkar + "</span></p>"
+            infobox.innerHTML += "<p><span id = 'notelp'>" + noTelp + "</span><p>"
+
+        }
+
+        function sendEmail() {
+            const data =JSON.parse(localStorage.getItem("EMERGENSHIFT"))
+            var alamatUser = data[0]["almt"]
+            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
+                alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS")).label
+            }
+            Email.send({
+            Host: "smtp.gmail.com",
+            Username: "emergenshift@gmail.com",
+            Password: "emergen_010",
+            To: 'emergenshift.client@gmail.com',
+            From: "emergenshift@gmail.com",
+            Cc: data[0]["email"],
+            Subject: "EMERGENSHIFT - KEBAKARAN - PANGGILAN DARURAT",
+            Body:"<p>Diterima laporan atas:<br> Nama : " +
+                data[0]["nama"] + 
+                "<br> Alamat : " + alamatUser + 
+                "<br> Nomor telpon: " + data[0]["telp"]+
+                "<br> Nomor KTP: " + data[0]["ktp"] +
+                "<br> E-mail: " + data[0]["email"] + 
+                "<br> Provinsi terdeteksi: " + document.getElementById("provi").innerText +
+                "<br><br> Jenis : Kebakaran<br></p>" +
+                "<br> Kantor pemadam kebakaran terdekat: " + document.getElementById("nama").innerText +
+                "<br> " + (document.getElementById("alamat").innerText) +
+                "<br>" + (document.getElementById("notelp").innerText)
+            })
+        }
+
+        window.addEventListener("load", getFirefighter());
+        window.addEventListener("load", sendEmail());
+    </script>
+	
+</html>

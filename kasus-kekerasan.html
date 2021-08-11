@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<script src = "https://smtpjs.com/v3/smtp.js"></script>
+<script src = "data/dataPolisi.js" type = "text/javascript"></script>
+
+<html>
+    <head>
+        <title>EmergenShift</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+
+
+    <body>
+        <header class = "normal-banner">
+            <ul class = "normal-list" style = "float: right; margin-right: 100px;">
+                <li><a href = "main.html">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class = "title">
+                <h1>EmergenShift</h1>
+            </div>
+        </header>
+
+        <main class = "banner violence cases" style = "margin-top: 0%">
+          <div id = "infobox">
+
+          </div>
+            <div id = "what-to-do" class = "hidden what-to-do-box" style = "margin-top: 50px !important;">
+                <p style = "font-size: 20px;">Harap menunggu hingga bantuan datang. Sebisa mungkin jangan menyebabkan perhatian berlebih yang mampu memperparah kondisi.</p>
+            </div>
+
+        </main>
+    </body>
+
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	
+    <script>
+        setTimeout(function(){
+            document.getElementById("what-to-do").classList.remove('hidden');
+            }, 2000);
+        setTimeout(function(){
+            open("final.html")
+            }, 10000);
+    </script>
+
+    <script>        
+        function getPolice(){            
+            const data = JSON.parse(localStorage.getItem("EMERGENSHIFT"))[0];
+            let provinsi = " "
+            provinsi = data.prov.toUpperCase()
+            console.log(provinsi)
+            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
+                const tempAddress = localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS");
+                provinsi = JSON.parse(tempAddress).region.toUpperCase();
+                console.log(provinsi)
+            } 
+            console.log(provinsi)
+            var i = 0
+            var polisi = ""
+            var isFound = false
+            var alamatPolisi = ""
+            var noTelp = ""
+            var website = ""
+
+            while (i < dataPolisi.length){
+                if (provinsi === dataPolisi[i]["Provinsi"].toUpperCase() || provinsi === dataPolisi[i]["Provinsi_eng"].toUpperCase()){
+                    polisi = dataPolisi[i]["Nama"]
+                    alamatPolisi = dataPolisi[i]["Alamat"]
+                    noTelp = dataPolisi[i]["Nomor Telepon"]
+                    website = dataPolisi[i]["Website"]
+                    isFound = true
+                }
+                i = i + 1;
+            }
+
+            const infobox = document.getElementById("infobox");
+            infobox.innerHTML += "<p>Lokasi: <span id = 'provi'> " + provinsi + "</span></p>"
+            infobox.innerHTML += "<p><span id = 'nama'>" + polisi + "</span><p>"
+            infobox.innerHTML += "<p><span id = 'alamat'>" + alamatPolisi + "</span></p>"
+            infobox.innerHTML += "<p><span id = 'notelp'>" + noTelp + "</span><p>"
+            infobox.innerHTML += "<p><span id = 'website'>" + website + "</span><p>"
+        }
+
+        function sendEmail() {
+            const data =JSON.parse(localStorage.getItem("EMERGENSHIFT"))
+            var alamatUser = data[0]["almt"]
+            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
+                alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS")).label
+            }
+            Email.send({
+            Host: "smtp.gmail.com",
+            Username: "emergenshift@gmail.com",
+            Password: "emergen_010",
+            To: 'emergenshift.client@gmail.com',
+            From: "emergenshift@gmail.com",
+            Cc: data[0]["email"],
+            Subject: "EMERGENSHIFT - KEKERASAN -PANGGILAN DARURAT",
+            Body:"<p>Diterima laporan atas:<br> Nama : " +
+                 data[0]["nama"] + 
+                 "<br> Alamat : " + alamatUser + 
+                 "<br> Nomor telpon: " + data[0]["telp"]+
+                 "<br> Nomor KTP: " + data[0]["ktp"] +
+                 "<br> E-mail: " + data[0]["email"] + 
+                 "<br> Provinsi terdeteksi: " + document.getElementById("provi").innerText +
+                "<br><br> Jenis : Kekerasan (tawuran/pembunuhan) <br></p>" +
+                "<br> Kantor polisi terdekat: " + document.getElementById("nama").innerText +
+                "<br> " + (document.getElementById("alamat").innerText) +
+                "<br>" + (document.getElementById("notelp").innerText) +
+                "<br>" + (document.getElementById("website").innerText)
+            })
+        }
+
+        window.addEventListener("load", getPolice());
+        window.addEventListener("load", sendEmail());
+    </script>
+</html>

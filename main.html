@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <html>
     <head>
@@ -10,7 +11,7 @@
     <body>
         <header class = "banner">
             <ul style = "float: right; margin-right: 100px;">
-                <li><a href = "">Laman Depan</a></li>
+                <li><a href = "main.html">Laman Depan</a></li>
                 <li><a href = "kredensial.html">Kredensial</a></li>
                 <li><a href = "tentang.html">Tentang Kami</a></li>
             </ul>
@@ -22,31 +23,31 @@
 
         <main>
 
-            <div id = "input-alamat" style = "background-color: white; border-radius: 20px; padding: 10px">
+            <div id = "input-alamat">
                 <p style = "font-size: 20px; margin-bottom: -20px;">Masukkan alamat Anda sekarang!</p>
-                <input style = "display: inline" id = "name" type = "text" name = "name" placeholder = "Masukkan alamat....">
-                <input class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
+                <input style = "display: inline" id = "custom-address" type = "text" name = "custom-address" placeholder = "Masukkan alamat....">
+                <input id = "address-button" class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
                 <p style = "font-size: 20px; margin-bottom: -20px;">atau</p>
-                <input class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
+                <input id = "location-button" class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
             </div>
             <hr>
             <div id = "menu">
                 <p>Tenang! Bantuan akan segera datang.<br>Apa yang terjadi?</p>
-                <div class = "option-card" onclick="location.href='perampokan.html';">&nbsp;
+                <div class = "option-card" onclick="location.href='kasus-perampokan.html';">&nbsp;
                     <img src = "assets/icons8-robbery-100.png" class = "option-icon">
                     <p>Tindakan perampokan atau penculikan</p>
                 </div>
 
-                <div class = "option-card" onclick="location.href='medis.html';">&nbsp;
+                <div class = "option-card" onclick="location.href='kasus-medis.html';">&nbsp;
                     <img src = "assets/ambulance.png" class = "option-icon">
                     <p>Kejadian medis kritis / pengidap COVID-19</p>
                 </div>
-                <div class = "option-card" onclick="location.href='kebakaran.html';">&nbsp;
+                <div class = "option-card" onclick="location.href='kasus-kebakaran.html';">&nbsp;
                     <img src = "assets/icons8-fire-hydrant-100.png" class = "option-icon">
                     <p>Kebakaran</p>
                 </div>
 
-                <div class = "option-card" onclick="location.href='kekerasan.html';">&nbsp;
+                <div class = "option-card" onclick="location.href='kasus-kekerasan.html';">&nbsp;
                     <img src = "assets/icons8-murder-100.png" class = "option-icon">
                     <p>Tindakan kekerasan / pembunuhan / tawuran</p>
                 </div>
@@ -56,5 +57,36 @@
 
         
     </body>
-    
+    <script>
+        $('#location-button').click(function(){
+        
+            navigator.geolocation.getCurrentPosition(
+            function( position ){ // success cb
+                console.log( position );
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                
+                const Http = new XMLHttpRequest();
+                const url = 'http://api.positionstack.com/v1/reverse?access_key=184fa96c2f976f0270df6acd56b0d6e6&query=' + lat + ',' + lng
+                Http.open("GET", url);
+                Http.send();
+                Http.onreadystatechange = (e) =>{
+                    address  = JSON.parse(Http.responseText)
+                    console.log(address.data[0])
+                    console.log(address.data[0].region)
+                    const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+                    localStorage.setItem(storageKey, JSON.stringify(address.data[0]))
+                    
+                }
+            }
+            )});
+        $("#address-button").click(function(){
+            const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+            localStorage.setItem(storageKey, document.getElementById("custom-address").value)
+        })
+        window.addEventListener("load", function(){
+            localStorage.setItem("EMERGENSHIFT_TEMPORARY_ADDRESS", "")
+        })
+        
+    </script>
 </html>
