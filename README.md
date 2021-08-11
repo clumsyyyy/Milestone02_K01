@@ -3,6 +3,7 @@ Tugas Milestone 2 Kelompok 1 SPARTA HMIF 2020
 
 EmergenShift : Ensuring Firsthand Emergency at Any Case
 Kelompok 1 - MGKL
+
 ANGGOTA :
 Vieri Mansyl 			                - 16520056 - Front End
 Putri Nurhaliza 				          - 16520063 - Front End
