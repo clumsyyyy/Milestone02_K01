@@ -1,8 +1,9 @@
 # Milestone02_K01
 Tugas Milestone 2 Kelompok 1 SPARTA HMIF 2020
 
-EmergenShift : Ensuring Firsthand Emergency at Any Case
-Kelompok 1 - MGKL
+• EmergenShift : Ensuring Firsthand Emergency at Any Case
+
+• Kelompok 1 - MGKL
 
 # ANGGOTA :
 1. Vieri Mansyl 			                - 16520056 - Front End
