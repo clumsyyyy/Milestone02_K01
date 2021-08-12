@@ -2,177 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-@media screen and (max-width: 1000px){
-    main{
-        margin-top: 150% !important;
-    }
-
-    .banner{
-        border-radius: 0px !important;
-        background-repeat: no-repeat !important;
-        background-size: 200% 100%!important;
-        
-    }
-    .banner ul{
-        margin-right: 100px !important;
-    }
-    .banner ul li{
-        font-size: 12px !important;
-        margin-right: 0px !important;
-        
-    }
-
-    .normal-banner ul li{
-        font-size: 12px !important;
-        margin-right: 5px !important;
-    }
-
-    .banner h1{
-        font-size: 50px !important;
-        margin-top: 100% !important;
-    }
-
-    .banner p{
-        font-size: 12px !important;
-    }
-    main{
-        margin-left: -15px !important;
-    }
-
-    .location{
-        width: 100% !important;
-        font-size: 15px !important;
-    }
-
-    .send-address{
-        width: 30% !important;
-        font-size: 15px !important;
-    }
-    #desc{
-        margin-left: 0px !important;
-    }
-
-    #arrowdown{
-        margin-top: 30px !important;
-        height: 30px !important;
-        width: 30px !important;
-        float: center !important;
-        margin-left: 40% !important;
-    }
-    .option-card{
-        margin-left: 20% !important;
-        margin-bottom: 20px !important;
-    }
-    .option-card p{
-        font-size: 12px !important;
-    }
-
-    #menu p{
-        font-size: 20px;
-        margin: 0 auto !important;
-    }
-    #menu{
-        margin-left: 20px !important;
-    }
-
-    hr{
-        margin-left: 20px !important
-    }
-
-    #input-alamat{
-        margin-left: 30px !important;
-    }
-    .credentials-form, .normal-main{
-        margin-top: 10% !important;
-        margin-left: 5px !important;
-    }
-
-    .credentials-form h2{
-        font-size: 30px !important;
-    }
-    .credentials-form input{
-        width: 90% !important;
-    }
-    .normal-list{
-        position: absolute;
-        margin-top: 70px !important;
-        z-index: 1 !important;
-        background-color: white;
-        width: 100%;
-        margin-left: 0px !important;
-        height: 30px;
-        padding: 20px;
-        padding-left: 30px !important    
-    
-    }
-
-    .normal-list li{
-        margin-left: 10px !important;
-    }
-
-    .normal-list li a{
-        font-size: 15px !important;
-    }
-    .title{
-        height: 70px !important;
-        background-color: white!important;
-        width: 100% !important;
-    }
-    .title h1{
-        margin-left: 60px !important;
-    }
-
-    .cases h3{
-        font-size: 30px !important;
-        margin-top: 40px;
-    }
-
-    .cases p{
-        font-size: 20px !important;
-    }
-
-    .what-to-do-box{
-        margin-left: 40px !important;
-        max-width: 10px !important;
-        padding: 50px !important;
-    }
-
-    .what-to-do-box p{
-        font-size: 15px !important;
-        margin-left: 5px !important;
-        
-    }
-    .cases h3, p{
-        margin-left: -20px !important; 
-    }
-
-    #calling, #address-p{
-        font-size: 15px !important;
-        margin: 20px !important;
-    }
-
-}
-
-html, body {
-    min-width: 98% !important;
-    margin: 0px !important;
-    padding: 0px !important;
+body{
+    width: 90vw !important;
+    height: 100vh !important;
+    overflow-x: hidden;
 }
 
 .banner{
     font-family: "Lexend";
     color: white;
-    min-height: 90%;
-    position: absolute;
-    min-width: 98% !important;
+    min-height: 100vh;
+    min-width: 90vw !important;
     font-size: 50px;
-    padding-left: 30px;
-    margin: -10px;
-    margin-top: -20px;
+    padding: 4.5vw !important;
+    margin-top: -10vh;
+    margin-left: -1vw;
     background-image: linear-gradient(90deg, rgba(185,29,29,1) 0%, rgba(91,0,0,0.7572071064754027) 45%, rgba(0,21,57,0.3706524846266631) 91%), 
     url('assets/header-background.jpg');
     background-size: 100%;
-    border-radius: 0px 0px 30px 30px;
     box-shadow: 0px 5px 5px 0px rgba(124, 124,124);
 }
 
@@ -207,12 +54,19 @@ html, body {
 .banner a{
     color: white;
 }
-
-header h1{
-    margin-top: 20%;
-    margin-bottom: -0.5%;
+.banner a:hover{
+    color:rgb(204, 204, 204)
 }
 
+
+header h1{
+    padding-top: 50vh;
+    font-size: 80px;
+}
+
+header p{
+    margin-top: -8vh;
+}
 
 header ul li{
     display: inline;
@@ -227,19 +81,17 @@ main{
     position: absolute;
     font-family: "Poppins";
     font-size: 30px;
-    margin-left: 50px;
-    margin-right: 100px;
-    margin-top: 40%;
-    padding: 20px;
-    min-width: 90%;
+    padding: 4vw;
+    min-width: 90vw;
     text-align: center;
 }
 
 .option-card{
     border: 2px solid rgba(124, 124,124);
     font-size: 20px;
-    width: 50%;
-    margin: 20px 25%;
+    width: 45vw;
+    margin-bottom: 20px;
+    margin-left: 22vw;
     border-radius: 20px;
     box-shadow: 0px 5px 5px 0px rgba(124, 124,124);
     min-height: 40px;
@@ -300,9 +152,21 @@ footer{
     border-radius: 20px 20px 0px 0px;
     position: absolute;
 }
-
+label{
+    font-size: 20px;
+}
 .normal-list{
     margin-top: 30px;
+}
+
+.normal-list li a{
+    color: black;
+    text-decoration: none;
+}
+
+.normal-list li a:hover{
+    color: rgb(177, 177, 177);
+    text-decoration: underline;
 }
 
 .title h1{
@@ -384,4 +248,167 @@ footer{
 
 .about p{
     font-size: 20px !important;
+}
+
+@media screen and (max-width: 1000px){
+
+
+    .banner{
+        border-radius: 0px !important;
+        background-repeat: no-repeat !important;
+        background-size: 200% 100%!important;
+        margin-left: -2vw;
+        width: 100vw;
+        
+    }
+    .banner ul{
+        margin-right: 100px !important;
+    }
+    .banner ul li{
+        font-size: 12px !important;
+        margin-right: 0px !important;
+        
+    }
+
+    .normal-banner ul li{
+        font-size: 12px !important;
+        margin-right: 5px !important;
+    }
+
+    .banner h1{
+        font-size: 40px !important;
+    }
+
+    .banner p{
+        font-size: 12px !important;
+    }
+    main{
+        margin-left: -7.5vw!important;
+    }
+
+    .location{
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+
+    .send-address{
+        width: 30% !important;
+        font-size: 15px !important;
+    }
+    #desc{
+        margin-left: 0px !important;
+    }
+
+    #arrowdown{
+        margin-top: 30px !important;
+        height: 30px !important;
+        width: 30px !important;
+        float: center !important;
+        margin-left: 40% !important;
+    }
+    .option-card{
+        margin-left: 20% !important;
+        margin-bottom: 20px !important;
+        margin-top: 10px !important;
+    }
+    .option-card p{
+        font-size: 12px !important;
+    }
+
+    #menu p{
+        font-size: 20px;
+        margin: 0 auto !important;
+    }
+    #menu{
+        margin-left: 20px !important;
+    }
+
+    hr{
+        margin-left: 20px !important
+    }
+
+    #input-alamat{
+        margin-left: 30px !important;
+    }
+    .credentials-form, .normal-main{
+        margin-top: 10% !important;
+        margin-left: 0vw !important;
+    }
+
+    .credentials-form h2{
+        font-size: 30px !important;
+    }
+    .credentials-form input{
+        width: 90% !important;
+    }
+    .normal-list{
+        position: absolute;
+        margin-top: 90px !important;
+        background-color: white;
+        z-index: 1;
+        width: 100vw;
+        padding-bottom: 20px;
+        margin-left: -5vh;
+    }
+
+    .normal-list li{
+        margin-left: 10px !important;
+    }
+
+    .normal-list li a{
+        font-size: 15px !important;
+    }
+    .title{
+        height: 70px !important;
+        background-color: white!important;
+        width: 100% !important;
+    }
+    .title h1{
+        margin-left: 60px !important;
+    }
+
+    
+    .cases h3{
+        font-size: 30px !important;
+        margin-top: 40px;
+        padding-left: 10vw;
+    }
+
+    .cases p{
+        font-size: 20px !important;
+        padding-left: 10vw;
+    }
+
+    .what-to-do-box{
+        margin-left: 30px !important;
+        min-width: 20vw !important;
+        padding: 50px !important;
+    }
+
+    .what-to-do-box p{
+        font-size: 15px !important;
+        margin-left: -5px !important;
+        
+    }
+    .cases h3, p{
+        margin-left: -20px !important; 
+    }
+
+    #calling, #address-p{
+        font-size: 15px !important;
+        margin: 20px !important;
+    }
+
+    header h1{
+        padding-top: 70vh;
+        font-size: 40px !important;
+    }
+
+    header p{
+        padding-top: 5vh;
+    }
+
+    label{
+        font-size: 20px;
+    }
 }

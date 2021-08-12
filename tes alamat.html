@@ -22,7 +22,7 @@
                 var lng =  119.55695251116617;
                 
                 const Http = new XMLHttpRequest();
-                const url = 'http://api.positionstack.com/v1/reverse?access_key=184fa96c2f976f0270df6acd56b0d6e6&query=' + lat + ',' + lng
+                const url = 'https://api.positionstack.com/v1/reverse?access_key=184fa96c2f976f0270df6acd56b0d6e6&query=' + lat + ',' + lng
                 Http.open("GET", url);
                 Http.send();
                 Http.onreadystatechange = (e) =>{
