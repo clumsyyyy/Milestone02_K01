@@ -416,4 +416,8 @@ label{
     label{
         font-size: 20px;
     }
+
+    .adjustwidth{
+        width: 100vw;
+    }
 }
