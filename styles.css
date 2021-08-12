@@ -110,6 +110,12 @@ main{
 .option-icon{
     height: 40px;
     width: 40px;
+    animation: blink 1s linear infinite alternate;
+}
+@keyframes blink{
+    0% {opacity: 0;}
+    50% {opacity: .5;}
+    100% {opacity: 1;}
 }
 
 input{
