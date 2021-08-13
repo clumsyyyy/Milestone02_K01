@@ -61,8 +61,18 @@ body{
 header h1{
     padding-top: 50vh;
     font-size: 80px;
-}
+    animation: typeh 2s steps(12);
+    overflow:hidden;
+    white-space:nowrap;
 
+}
+@keyframes typeh {
+    0% {width:0ch}
+    25%{width:3ch}
+    50% {width:6ch}
+    75%{width:9ch}
+    100% {width:12ch}
+}
 header p{
     margin-top: -8vh;
 }
