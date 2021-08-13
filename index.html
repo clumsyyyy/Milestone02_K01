@@ -2,6 +2,16 @@
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <html>
+    <script>
+        window.addEventListener("load", function(){
+            console.log(localStorage.getItem("EMERGENSHIFT"))
+            if (localStorage.getItem("EMERGENSHIFT") !== ""){
+                document.getElementById("menu").style.display = "block"
+                document.getElementById("disclaimer").style.display = "none"
+                document.getElementById("credent").style.display = "none"
+            }
+        })
+    </script>
     <head>
         <title>EmergenShift</title>
         <link rel = "stylesheet" href = "styles.css">
@@ -10,11 +20,7 @@
 
     <body>
         <header class = "banner">
-            <ul style = "float: right; margin-right: 100px;">
-                <li><a href = "main.html">Laman Depan</a></li>
-                <li><a href = "kredensial.html">Kredensial</a></li>
-                <li><a href = "tentang.html">Tentang Kami</a></li>
-            </ul>
+
 
             <h1>EmergenShift</h1>
             <p id = "desc">Semua informasi darurat dan penanganan darurat <br>dalam satu laman.</p>
@@ -38,15 +44,25 @@
         </header>
 
         <main>
+            <ul class = "normal-list home-list">
+                <li><a href = "main.html">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
             <div id = "input-alamat">
-                <p style = "font-size: 20px; margin-bottom: -20px;">Masukkan alamat Anda sekarang!</p>
+                <button class = "button location credentials" style = "border-radius: 10px; font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline" onclick = "location.href = 'kredensial.html';">Isi kredensial!</button>
+                <p style = "font-size: 20px; margin-bottom: -20px;">Masukkan alamat Anda sekarang!<br>
+                    <span style = "font-size: 12px">(opsional, jika tidak diisi maka alamat di kredensial yang akan digunakan)</span></p>
                 <input style = "display: inline" id = "custom-address" type = "text" name = "custom-address" placeholder = "Masukkan alamat....">
                 <input id = "address-button" class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
                 <p style = "font-size: 20px; margin-bottom: -20px;">atau</p>
                 <input id = "location-button" class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
+                
             </div>
             <hr>
-            <div id = "menu">
+            <p id = "disclaimer" style = "display: block;  padding-left:0vw;">Menu tidak dapat digunakan apabila kredensial belum terisi.</p>
+            <button id = "credent" style = "display: block" class = "button location" style = "border-radius: 10px; font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline" onclick = "location.href = 'kredensial.html';">Isi kredensial!</button>
+            <div id = "menu" style = "display: none">
                 <p style = "text-justify: left;">Tenang! Bantuan akan segera datang.<br>Apa yang terjadi?</p>
                 <div class = "option-card" onclick="location.href='kasus-perampokan.html';">&nbsp;
                     <img src = "assets/icons8-robbery-100.png" class = "option-icon">
@@ -67,10 +83,11 @@
                     <p>Tindakan kekerasan / pembunuhan / tawuran</p>
                 </div>
             </div>
-
+            <footer>
+                2021 Copyright, Kel 1 SPARTA 2020
+            </footer>
         </main>
 
-        
     </body>
     <script>
         $('#location-button').click(function(){
@@ -102,6 +119,8 @@
         window.addEventListener("load", function(){
             localStorage.setItem("EMERGENSHIFT_TEMPORARY_ADDRESS", "")
         })
+
+        
         
     </script>
 </html>
