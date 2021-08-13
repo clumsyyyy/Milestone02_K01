@@ -442,6 +442,11 @@ label{
     }
 }
 
+/* Add smoother transiton to some buttons */
+.update, .option-card, .send-address, .location {
+    transition: 0.4s;
+}
+
 /* Background Animation */
 .circle-animation {
 	position: absolute;
