@@ -410,7 +410,7 @@ label{
     }
     .normal-list{
         position: absolute;
-        margin-top: 90px !important;
+        margin-top: 40px !important;
         background-color: white;
         z-index: 1;
         width: 100vw;
