@@ -8,7 +8,7 @@ function checkForStorage(){
 function putUserList(data){
     if (checkForStorage()){
         let userData = [];
-        if (localStorage.getItem(storageKey) !== ""){
+        if (localStorage.getItem(storageKey) !== "" || localStorage.getItem(storageKey) !== null){
             userData = JSON.parse(localStorage.getItem(storageKey));
         } else {
             userData = []
