@@ -63,17 +63,18 @@ body{
 header h1{
     padding-top: 50vh;
     font-size: 80px;
-    animation: typeh 2s steps(12);
-    overflow:hidden;
     white-space:nowrap;
+    overflow:hidden;
+    animation:typing 3s steps(12,end) forwards;
 
 }
-@keyframes typeh {
-    0% {width:0ch}
-    25%{width:3ch}
-    50% {width:6ch}
-    75%{width:9ch}
-    100% {width:12ch}
+
+@keyframes typing {
+    0% {width:0%}
+    25%{width:25%}
+    50%{width:50%}
+    75%{width:75%}
+    100%{width:100%}
 }
 header p{
     margin-top: -8vh;
