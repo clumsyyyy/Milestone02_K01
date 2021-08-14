@@ -66,6 +66,7 @@ header h1{
     animation: typeh 2s steps(12);
     overflow:hidden;
     white-space:nowrap;
+    min-width: 80vw;
 
 }
 @keyframes typeh {
