@@ -17,7 +17,7 @@ Tugas Milestone 2 Kelompok 1 SPARTA HMIF 2020
 9. Fikri Ihsan Fadhiilah 		         	- 16520427 - Database
 
 # Cara menggunakan web :
-1. Buka emergenshift.netify.app
+1. Buka emergenshift.netlify.app
 2. Untuk pengguna awal, dapat mengisi kredensial di pilihan kredensial di atas kanan web
 3. Untuk keadaan darurat, dapat langsung memasukkan alamat atau menggunakan alamat sekarang (dengan GPS)
 4. Setelah itu, pengguna dapat memilih salah satu kategori yang disediakan di web
