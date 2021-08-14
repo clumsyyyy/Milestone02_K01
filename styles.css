@@ -237,6 +237,58 @@ label{
     box-shadow: 0px 5px 5px 0px rgba(124, 124,124);
 }
 
+/* katalog foto kelompok */
+
+.katalog-anggota {
+    padding: .5em;
+}
+
+.katalog-anggota .kartu-anggota {
+    background-color: #e9e9e9;
+    border-radius: 10px;
+    padding: .5em;
+    transition: all .5s;
+}
+
+.katalog-anggota .kartu-anggota:hover {
+    box-shadow: 0px 5px 5px #7c7c7c;
+}
+
+.kartu-anggota .jabatan-anggota {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+.kartu-anggota img {
+    max-width: 90%;
+    border-radius: 50%;
+    transition: transform .5s;
+}
+
+.kartu-anggota img:hover {
+    transform: scale(1.15);
+}
+
+.kartu-anggota .nama-anggota {
+    font-size: 18px;
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
+}
+
+.kartu-anggota .nim-anggota {
+    font-size: 16px;
+}
+
+.wadah-kartu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: minmax(75px, 300px);
+    justify-content: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
 .footerr{
     background-color: red;
     position: absolute;
