@@ -8,8 +8,8 @@ function checkForStorage(){
 function putUserList(data){
     if (checkForStorage()){
         let userData = [];
-        if (localStorage.getItem(storageKey) !== "" || localStorage.getItem(storageKey) !== null){
-            userData = JSON.parse(localStorage.getItem(storageKey));
+        if (localStorage.getItem(storageKey) !== ""){
+            userData = JSON.parse(localStorage.getItem("EMERGENSHIFT"));
         } else if (localStorage.getItem(storageKey) === "" || localStorage.getItem(storageKey) === null){
             userData = []
         }
@@ -64,6 +64,10 @@ submitAction.addEventListener("submit", function(event){
 })
 
 window.addEventListener("load", renderCurrentData)
+window.addEventListener("load", function(){
+    if (localStorage.getItem("EMERGENSHIFT") === null){
+        localStorage.setItem("EMERGENSHIFT", "")
+}})
 
 
 var accordion = document.getElementsByClassName("accordion");;
