@@ -179,12 +179,18 @@ label{
 }
 
 .normal-list li a{
-    color: black;
+    color: white;
+    background-color: red;
+    padding: 0.4rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border:2px solid red;
+    transition: 0.4s;
 }
 
 .normal-list li a:hover{
-    color: rgb(177, 177, 177);
-    text-decoration: underline;
+    color: red;
+    background-color: white;
 }
 
 .title h1{
