@@ -10,7 +10,7 @@ function putUserList(data){
         let userData = [];
         if (localStorage.getItem(storageKey) !== "" || localStorage.getItem(storageKey) !== null){
             userData = JSON.parse(localStorage.getItem(storageKey));
-        } else {
+        } else if (localStorage.getItem(storageKey) === "" || localStorage.getItem(storageKey) === null){
             userData = []
         }
 
