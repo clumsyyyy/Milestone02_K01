@@ -4,7 +4,6 @@
 <html>
     <script>
         window.addEventListener("load", function(){
-            console.log(localStorage.getItem("EMERGENSHIFT"))
             if (localStorage.getItem("EMERGENSHIFT") !== ""){
                 document.getElementById("menu").style.display = "block"
                 document.getElementById("disclaimer").style.display = "none"
@@ -67,21 +66,21 @@
             <button id = "credent" style = "display: block" class = "button location" style = "border-radius: 10px; font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline" onclick = "location.href = 'kredensial.html';">Isi kredensial!</button>
             <div id = "menu" style = "display: none">
                 <p style = "text-justify: left;">Tenang! Bantuan akan segera datang.<br>Apa yang terjadi?</p>
-                <div class = "option-card" onclick="location.href='kasus-perampokan.html';">&nbsp;
+                <div class = "option-card" onclick="counter('kasus-perampokan.html')">&nbsp;
                     <img src = "assets/icons8-robbery-100.png" class = "option-icon">
                     <p>Tindakan perampokan atau penculikan</p>
                 </div>
 
-                <div class = "option-card" onclick="location.href='kasus-medis.html';">&nbsp;
+                <div class = "option-card" onclick="counter('kasus-medis.html')">&nbsp;
                     <img src = "assets/ambulance.png" class = "option-icon">
-                    <p>Kejadian medis kritis / pengidap COVID-19</p>
+                    <p>Kejadian medis kritis</p>
                 </div>
-                <div class = "option-card" onclick="location.href='kasus-kebakaran.html';">&nbsp;
+                <div class = "option-card" onclick="counter('kasus-kebakaran.html')">&nbsp;
                     <img src = "assets/icons8-fire-hydrant-100.png" class = "option-icon">
                     <p>Kebakaran</p>
                 </div>
 
-                <div class = "option-card" onclick="location.href='kasus-kekerasan.html';">&nbsp;
+                <div class = "option-card" onclick="counter('kasus-kekerasan.html')">&nbsp;
                     <img src = "assets/icons8-murder-100.png" class = "option-icon">
                     <p>Tindakan kekerasan / pembunuhan / tawuran</p>
                 </div>
@@ -119,8 +118,30 @@
             const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
             localStorage.setItem(storageKey, document.getElementById("custom-address").value)
         })
+
+        function timer(){
+            var date = new Date
+            if ((date.getMinutes() === 30 || date.getMinutes() == 0 || date.getMinutes() == 00) && date.getSeconds() == 0){
+                localStorage.setItem("COUNTER", 0);
+            }
+            
+        }
+
+        function counter(page){
+            var count = parseInt(localStorage.getItem("COUNTER"))
+            console.log(count)
+            if (count < 3){
+                count++
+                localStorage.setItem("COUNTER", count)
+                location.href = page
+            } else if (count >= 3) {
+                alert("Mohon maaf, Anda hanya bisa melaporkan 3 kali dalam interval 30 menit.")
+            }
+        }
+
         window.addEventListener("load", function(){
             localStorage.setItem("EMERGENSHIFT_TEMPORARY_ADDRESS", "")
+            setInterval(timer, 1000)
         })
 
         
