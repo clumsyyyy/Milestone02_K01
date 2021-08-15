@@ -40,9 +40,6 @@
         setTimeout(function(){
             document.getElementById("what-to-do").classList.remove('hidden');
             }, 2000);
-        setTimeout(function(){
-            open("final.html")
-            }, 10000);
     </script>
 
     <script>        
@@ -50,20 +47,16 @@
             const data = JSON.parse(localStorage.getItem("EMERGENSHIFT"))[0];
             let provinsi = " "
             provinsi = data.prov.toUpperCase()
-            console.log(provinsi)
             if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION") !== ""){
                 const tempAddress = localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION");
                 provinsi = JSON.parse(tempAddress).region.toUpperCase();
-                console.log(provinsi)
             } 
-            console.log(provinsi)
             var i = 0
             var polisi = ""
             var isFound = false
             var alamatPolisi = ""
             var noTelp = ""
             var website = ""
-
             while (i < dataPolisi.length){
                 if (provinsi === dataPolisi[i]["Provinsi"].toUpperCase() || provinsi === dataPolisi[i]["Provinsi_eng"].toUpperCase()){
                     polisi = dataPolisi[i]["Nama"]
@@ -113,6 +106,9 @@
                 "<br>" + (document.getElementById("notelp").innerText) +
                 "<br>" + (document.getElementById("website").innerText)
             })
+            const infobox = document.getElementById("infobox");
+            infobox.innerHTML += "<br><p>JANGAN TUTUP HALAMAN INI SAMPAI BANTUAN TIBA."
+            infobox.innerHTML += "<p>Silahkan cek email Anda untuk mengecek laporan yang sudah dikirimkan."
         }
 
         window.addEventListener("load", getPolice());

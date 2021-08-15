@@ -42,9 +42,7 @@
             setTimeout(function(){
             document.getElementById("what-to-do").classList.remove('hidden');
             }, 2000);
-            setTimeout(function(){
-            open("final.html")
-            }, 10000);
+
     </script>
 
     <script>        
@@ -113,6 +111,9 @@
                 "<br> " + (document.getElementById("alamat").innerText) +
                 "<br>" + (document.getElementById("notelp").innerText)
             })
+            const infobox = document.getElementById("infobox");
+            infobox.innerHTML += "<br><p>JANGAN TUTUP HALAMAN INI SAMPAI BANTUAN TIBA."
+            infobox.innerHTML += "<p>Silahkan cek email Anda untuk mengecek laporan yang sudah dikirimkan."
         }
 
         window.addEventListener("load", getFirefighter());

@@ -130,12 +130,12 @@
         function counter(page){
             var count = parseInt(localStorage.getItem("COUNTER"))
             console.log(count)
-            if (count < 1){
+            if (count < 5){
                 count++
                 localStorage.setItem("COUNTER", count)
                 location.href = page
-            } else if (count >= 1) {
-                alert("Mohon maaf, Anda hanya bisa melaporkan 3 kali dalam interval 5 menit menit.")
+            } else if (count >= 5) {
+                alert("Mohon maaf, Anda hanya bisa melaporkan 5 kali dalam interval 5 menit.")
             }
         }
 

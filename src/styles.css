@@ -409,7 +409,7 @@ label{
         font-size: 10px;
     }
     footer{
-        margin-left: -7.5vw;
+        margin-left: -2vw;
     }
     .panel p{
         margin-left: 2vw !important;
@@ -757,3 +757,8 @@ label{
   .cases ol li{
     font-size: 15px;
   }
+
+
+#infobox p{
+    font-size: 20px;
+}
