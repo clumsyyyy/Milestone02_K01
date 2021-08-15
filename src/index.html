@@ -108,7 +108,7 @@
                     address  = JSON.parse(Http.responseText)
                     console.log(address.data[0])
                     console.log(address.data[0].region)
-                    const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+                    const storageKey = "EMERGENSHIFT_TEMPORARY_LOCATION"
                     localStorage.setItem(storageKey, JSON.stringify(address.data[0]))
                     
                 }
@@ -121,7 +121,7 @@
 
         function timer(){
             var date = new Date
-            if ((date.getMinutes() === 30 || date.getMinutes() == 0 || date.getMinutes() == 00) && date.getSeconds() == 0){
+            if (date.getMinutes() % 5 === 0){
                 localStorage.setItem("COUNTER", 0);
             }
             
@@ -130,17 +130,18 @@
         function counter(page){
             var count = parseInt(localStorage.getItem("COUNTER"))
             console.log(count)
-            if (count < 3){
+            if (count < 1){
                 count++
                 localStorage.setItem("COUNTER", count)
                 location.href = page
-            } else if (count >= 3) {
-                alert("Mohon maaf, Anda hanya bisa melaporkan 3 kali dalam interval 30 menit.")
+            } else if (count >= 1) {
+                alert("Mohon maaf, Anda hanya bisa melaporkan 3 kali dalam interval 5 menit menit.")
             }
         }
 
         window.addEventListener("load", function(){
             localStorage.setItem("EMERGENSHIFT_TEMPORARY_ADDRESS", "")
+            localStorage.setItem("EMERGENSHIFT_TEMPORARY_LOCATION", "")
             setInterval(timer, 1000)
         })
 

@@ -86,8 +86,11 @@
         function sendEmail() {
             const data =JSON.parse(localStorage.getItem("EMERGENSHIFT"))
             var alamatUser = data[0]["almt"]
+            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION") !== ""){
+                alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION")).label
+            }
             if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
-                alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS")).label
+                alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS"))
             }
             Email.send({
             Host: "smtp.gmail.com",
