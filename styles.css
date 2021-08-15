@@ -378,6 +378,31 @@ label{
     }
 }
 
+@media screen and (max-width: 1030px){
+    .normal-list.other{
+        position: absolute;
+        margin-top: 40px !important;
+        background-color: white;
+        z-index: 1;
+        width: 100vw;
+        padding-bottom: 20px;
+        margin-left: -5vh;
+        display: flex;
+        flex-flow:wrap;
+        justify-content: center;
+        gap: 20px;
+        top: 8vh;
+    }
+
+    .normal-list.other li{
+        margin-left: 10px !important;
+    }
+
+    .normal-list.other li a{
+        font-size: 15px !important;
+    }
+}
+
 @media screen and (max-width: 800px){
     footer{
         margin-left: -7.5vw;
@@ -480,6 +505,10 @@ label{
         width: 100vw;
         padding-bottom: 20px;
         margin-left: -5vh;
+        display: flex;
+        flex-flow:wrap;
+        justify-content: center;
+        gap: 20px;
     }
 
     .normal-list li{
