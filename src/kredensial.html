@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<html>
+    <head>
+        <title>EmergenShift</title>
+        <link rel = "stylesheet" href = "styles.css">
+        <link rel="shortcut icon" type="image/jpg" href="assets/favicon.ico"/>
+    </head>
+
+    <body>
+        <header class = "normal-banner">
+            <ul class = "normal-list other" style = "float: right; margin-right: 100px;">
+                <li><a href = "main.html">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class = "title">
+                <h1>EmergenShift</h1>
+            </div>
+        </header>
+
+        <main class = "credentials-form" style = "margin-top: 0%">
+            <h2>
+                Perbarui kredensial Anda
+            </h2>
+            <div id = "user-form">
+                <form id = "form-data-user" onsubmit = 'return false'>
+                    <div class = "form-element">
+                        <label for = "nama">Nama user:</label><br>
+                        <input id = "nama" type = "text" name = "nama" placeholder = "Masukkan nama user...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "telp">Nomor telpon:</label><br>
+                        <input id = "telp" type = "text" name = "telp" placeholder = "Masukkan nomor telpon...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "nik">Nomor KTP/NIK:</label><br>
+                        <input id = "ktp" type = "text" name = "ktp" placeholder = "Masukkan nomor KTP/NIK...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "almt">Alamat:</label><br>
+                        <input id = "almt" type = "text" name = "almt" placeholder = "Masukkan alamat...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "prov">Provinsi:</label><br>
+                        <input id = "prov" type = "text" name = "prov" placeholder = "Masukkan provinsi...." required <br>
+                    </div>
+
+                    <div class = "form-element">
+                        <label for = "email">E-mail:</label><br>
+                        <input id = "email" type = "text" name = "email" placeholder = "Masukkan email...." required <br>
+                        <label style = "font-size: 12px; color: gray;" ><br>E-mail akan menerima <i>carbon copy</i> laporan setelah dikirim.</label>
+                    </div>
+
+                    <div class = "form-element">
+                        <input id = "submitButton" class = "button update" type = "submit" value = "Submit Data">
+                    </div>
+                </form>
+            </div>
+
+            <button class="accordion" style = "display: block">Data tersimpan</button>
+                <div style = "font-size: 15px;" class="panel" id = "databox">
+
+                </div>
+            <footer>
+                2021 Copyright, Kel 1 SPARTA 2020
+            </footer>
+        </main>
+    </body>
+    <script src = "script/script_kredential.js"></script>
+
+    
+</html>

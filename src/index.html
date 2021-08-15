@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<html>
+    <script>
+        window.addEventListener("load", function(){
+            if (localStorage.getItem("EMERGENSHIFT") !== ""){
+                document.getElementById("menu").style.display = "block"
+                document.getElementById("disclaimer").style.display = "none"
+                document.getElementById("credent").style.display = "none"
+            }
+        })
+    </script>
+    <head>
+        <title>EmergenShift</title>
+        <link rel = "stylesheet" href = "styles.css">
+        <link rel="shortcut icon" type="image/jpg" href="assets/favicon.ico"/>
+    </head>
+
+
+    <body>
+        <header class = "banner">
+
+
+            <h1>EmergenShift</h1>
+            <p id = "desc">Semua informasi darurat dan penanganan darurat <br>dalam satu laman.</p>
+            <a href="#sec-2">
+                <div class="scroll-down"></div>
+            </a>
+        
+            <div class="animation-area">
+                <ul class="circle-animation">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+        </header>
+
+        <main id="sec-2">
+            <ul class = "normal-list home-list">
+                <li><a href = "main.html">Laman Depan</a></li>
+                <li><a href = "kredensial.html">Kredensial</a></li>
+                <li><a href = "tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div id = "input-alamat">
+                <button class = "button location credentials" style = "border-radius: 10px; font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline" onclick = "location.href = 'kredensial.html';">Isi kredensial!</button>
+                <p style = "font-size: 20px; margin-bottom: -20px;">Masukkan alamat Anda sekarang!<br>
+                    <span style = "font-size: 12px">(opsional, jika tidak diisi maka alamat di kredensial yang akan digunakan)</span></p>
+                <input style = "display: inline" id = "custom-address" type = "text" name = "custom-address" placeholder = "Masukkan alamat....">
+                <input id = "address-button" class = "button send-address" type = "submit" value = "Kirimkan" style = "font-weight: normal; background-color: #002159; border: 3px #002159 solid; display: inline; margin-bottom: -20px;">
+                <p style = "font-size: 20px; margin-bottom: -20px;">atau</p>
+                <input id = "location-button" class = "button location" type = "submit" value = "Gunakan lokasi Anda sekarang" style = "font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline">
+                
+            </div>
+            <hr>
+            <p id = "disclaimer" style = "display: block;  padding-left:0vw;">Menu tidak dapat digunakan apabila kredensial belum terisi.</p>
+            <button id = "credent" style = "display: block" class = "button location" style = "border-radius: 10px; font-weight: normal; width: 40%; background-color: #002159; border: 3px #002159 solid; display: inline" onclick = "location.href = 'kredensial.html';">Isi kredensial!</button>
+            <div id = "menu" style = "display: none">
+                <p style = "text-justify: left;">Tenang! Bantuan akan segera datang.<br>Apa yang terjadi?</p>
+                <div class = "option-card" onclick="counter('kasus-perampokan.html')">&nbsp;
+                    <img src = "assets/icons8-robbery-100.png" class = "option-icon">
+                    <p>Tindakan perampokan atau penculikan</p>
+                </div>
+
+                <div class = "option-card" onclick="counter('kasus-medis.html')">&nbsp;
+                    <img src = "assets/ambulance.png" class = "option-icon">
+                    <p>Kejadian medis kritis</p>
+                </div>
+                <div class = "option-card" onclick="counter('kasus-kebakaran.html')">&nbsp;
+                    <img src = "assets/icons8-fire-hydrant-100.png" class = "option-icon">
+                    <p>Kebakaran</p>
+                </div>
+
+                <div class = "option-card" onclick="counter('kasus-kekerasan.html')">&nbsp;
+                    <img src = "assets/icons8-murder-100.png" class = "option-icon">
+                    <p>Tindakan kekerasan / pembunuhan / tawuran</p>
+                </div>
+            </div>
+            <footer>
+                2021 Copyright, Kel 1 SPARTA 2020
+            </footer>
+        </main>
+
+    </body>
+    <script>
+        $('#location-button').click(function(){
+        
+            navigator.geolocation.getCurrentPosition(
+            function( position ){ // success cb
+                console.log( position );
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                
+                const Http = new XMLHttpRequest();
+                const url = 'http://api.positionstack.com/v1/reverse?access_key=184fa96c2f976f0270df6acd56b0d6e6&query=' + lat + ',' + lng
+                Http.open("GET", url);
+                Http.send();
+                Http.onreadystatechange = (e) =>{
+                    address  = JSON.parse(Http.responseText)
+                    console.log(address.data[0])
+                    console.log(address.data[0].region)
+                    const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+                    localStorage.setItem(storageKey, JSON.stringify(address.data[0]))
+                    
+                }
+            }
+            )});
+        $("#address-button").click(function(){
+            const storageKey = "EMERGENSHIFT_TEMPORARY_ADDRESS"
+            localStorage.setItem(storageKey, document.getElementById("custom-address").value)
+        })
+
+        function timer(){
+            var date = new Date
+            if ((date.getMinutes() === 30 || date.getMinutes() == 0 || date.getMinutes() == 00) && date.getSeconds() == 0){
+                localStorage.setItem("COUNTER", 0);
+            }
+            
+        }
+
+        function counter(page){
+            var count = parseInt(localStorage.getItem("COUNTER"))
+            console.log(count)
+            if (count < 3){
+                count++
+                localStorage.setItem("COUNTER", count)
+                location.href = page
+            } else if (count >= 3) {
+                alert("Mohon maaf, Anda hanya bisa melaporkan 3 kali dalam interval 30 menit.")
+            }
+        }
+
+        window.addEventListener("load", function(){
+            localStorage.setItem("EMERGENSHIFT_TEMPORARY_ADDRESS", "")
+            setInterval(timer, 1000)
+        })
+
+        
+        
+    </script>
+</html>
