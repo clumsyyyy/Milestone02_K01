@@ -56,8 +56,8 @@
             let provinsi = " "
             provinsi = data.prov.toUpperCase()
             console.log(provinsi)
-            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
-                const tempAddress = localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS");
+            if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION") !== ""){
+                const tempAddress = localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION");
                 provinsi = JSON.parse(tempAddress).region.toUpperCase();
                 console.log(provinsi)
             } 
@@ -95,7 +95,7 @@
                 alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_LOCATION")).label
             }
             if (localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS") !== ""){
-                alamatUser = JSON.parse(localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS"))
+                alamatUser = localStorage.getItem("EMERGENSHIFT_TEMPORARY_ADDRESS")
             }
             Email.send({
             Host: "smtp.gmail.com",
