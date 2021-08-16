@@ -23,3 +23,6 @@ Tugas Milestone 2 Kelompok 1 SPARTA HMIF 2020
 4. Setelah itu, pengguna dapat memilih salah satu kategori yang disediakan di web
 5. Pengguna menunggu sambil melakukan tips-tips yang diberikan
 6. Setelah bantuan datang, akan terbuka laman baru berisi pemberitahuan bahwa bantuan telah datang
+
+# Catatan:
+Untuk penggunaan fitur deteksi lokasi, pengguna harus mengklik tombol kunci di sebelah domain lalu > Site Settings > Allow insecure site, dikarenakan pemanggilan API yang menggunakan HTTP bukan HTTPS. Mohon maaf atas ketidaknyamanannya.
