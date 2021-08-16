@@ -262,7 +262,7 @@ label{
 
 .kartu-anggota img {
     max-width: 90%;
-    border-radius: 50%;
+    border-radius: 5px;
     transition: transform .5s;
 }
 
